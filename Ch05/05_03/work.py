@@ -1,18 +1,25 @@
+
 # %%
 import pandas as pd
 
 csv_file = '2021-06.csv'
+csv_file
 
+# %%
 df = pd.read_csv(csv_file)
 df
+
 # %%
-df['date'] = csv_file[:-len('.csv')]
+# ???
+# df['date'] = csv_file[:-len('.csv')]
+df['date'] = csv_file[:-4]
 df
 
 # %%
 times = df['time'].str.split('-', expand=True)
 times.columns = ['start', 'end']
 times
+
 # %%
 df = pd.concat([df, times], axis=1)
 df

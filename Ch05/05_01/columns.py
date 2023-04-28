@@ -1,8 +1,10 @@
+
 # %%
 import pandas as pd
 
 df = pd.read_csv('weather.csv', parse_dates=['DATE'])
 df
+
 # %%
 df.rename(columns={
     'DATE': 'date',
@@ -10,12 +12,13 @@ df.rename(columns={
     'TMAX': 'max_temp',
 }, inplace=True)
 df
+
 # %%
 df = pd.read_csv('donations.csv')
 df
+
 # %%
 import re
-
 
 def fix_col(col):
     """Fix column name
@@ -28,5 +31,6 @@ def fix_col(col):
         .replace(' ', '_')
     )
 
+# %%
 df.rename(columns=fix_col, inplace=True)
 df

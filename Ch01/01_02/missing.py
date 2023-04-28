@@ -11,7 +11,6 @@ df
 df['amount'] = df['amount'].astype('Int32')
 df
 
-
 # %%
 df.isnull()
 

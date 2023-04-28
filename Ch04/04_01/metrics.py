@@ -19,6 +19,7 @@ schema = pa.schema([
     ('name', pa.string()),
     ('value', pa.float64()),
 ])
+schema
 
 # %%
 out_file = 'metrics.parquet'
@@ -29,4 +30,16 @@ pd.read_parquet(out_file)
 
 # %%
 df['time'] = df['time'].astype(str)
+df
+
+# %%
+df.dtypes
+
+# %%
+# Using schema that does not reflect the current data types:
 df.to_parquet(out_file, schema=schema)
+
+# %%
+df.to_parquet(out_file)
+
+# %%

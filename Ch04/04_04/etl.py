@@ -1,3 +1,4 @@
+
 # %%
 import pandas as pd
 
@@ -15,10 +16,16 @@ CREATE TABLE ships (
     lng FLOAT NOT NULL
 );
 '''
+schema
+
+# %%
 
 db_file = 'ships.db'
 conn = sqlite3.connect(db_file)
 conn.executescript(schema)
+
+
+# %%
 
 try:
     with conn as cur:
@@ -26,3 +33,5 @@ try:
         df.to_sql('ships', conn, if_exists='append', index=False)
 finally:
     conn.close()
+
+# %%

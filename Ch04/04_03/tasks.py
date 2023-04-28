@@ -1,8 +1,11 @@
+
+# %%
 import sqlite3
 
 import pandas as pd
 from invoke import task
 
+# %%
 
 def load_csv(csv_file):
     df = pd.read_csv(csv_file, parse_dates=['start', 'end'])
@@ -23,3 +26,13 @@ def etl(ctx, csv_file):
     db_file = f'rides.db'
     conn = sqlite3.connect(db_file)
     df.to_sql('rides', conn, index=False, if_exists='append')
+
+
+# %%
+df = load_csv('rides.csv')
+df
+
+# %%
+validate(df)
+
+# %%

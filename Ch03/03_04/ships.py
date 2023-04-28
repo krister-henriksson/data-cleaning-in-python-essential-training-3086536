@@ -1,8 +1,10 @@
+
 # %%
 import pandas as pd
 
 df = pd.read_csv('ships.csv')
 df
+
 # %%
 import pandera as pa
 import numpy as np

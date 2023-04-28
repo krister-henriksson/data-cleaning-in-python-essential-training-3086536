@@ -1,6 +1,6 @@
+
 # %%
 import pandas as pd
-
 
 df = pd.read_csv('cart.csv', parse_dates=['date'])
 df
@@ -20,6 +20,14 @@ df
 
 # %%
 import numpy as np
+
+# %%
+df.groupby('name')
+
+# %%
+df.groupby('name')['price']
+
+# %%
 prices = df.groupby('name')['price'].transform(np.mean)
 prices
 

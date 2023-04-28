@@ -1,8 +1,10 @@
+
 # %%
 import pandas as pd
 
 df = pd.read_csv('metrics.csv', parse_dates=['time'])
 df
+
 # %%
 
 df = pd.melt(
@@ -12,3 +14,5 @@ df = pd.melt(
     var_name='metric',
 )
 df
+
+# %%
